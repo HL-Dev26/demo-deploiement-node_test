@@ -19,6 +19,9 @@ jobs:
       with:
         node-version: 20
 
+    - name: Changement de repertoire
+      run: cd simpleApp    
+
     - name: Installer les dépendances
       run: npm install
 
