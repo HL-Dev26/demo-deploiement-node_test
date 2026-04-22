@@ -1,6 +1,7 @@
 name: Node.js CI demo deploiement
 
 on:
+workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -9,6 +10,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    #defaults:
+    # run:
+    #    working-directory: ./simpleApp
 
     steps:
     - name: Récupérer le code
@@ -17,10 +21,12 @@ jobs:
     - name: Installer Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 20   
 
     - name: Installer les dépendances
+    - working-directory: ./simpleApp
       run: npm install
 
     - name: Lancer les tests
+    - working-directory: ./simpleApp
       run: npm test
