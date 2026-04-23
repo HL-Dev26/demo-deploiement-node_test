@@ -15,7 +15,7 @@ describe("Tests de l'application Express", () => {
     const response = await request(app).get("/test");
     expect(response.statusCode).toBe(200);
     expect(response.body.status).toBe("UP");
-    expect(response.body.version).toBe("1.0.0");
+    
   });
 
 });

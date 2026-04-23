@@ -31,3 +31,5 @@ jobs:
     - name: Lancer les tests
     - working-directory: ./simpleApp
       run: npm test
+      env:
+        MY_APP_VERSION: ${{secrets.APP_VERSION}}
