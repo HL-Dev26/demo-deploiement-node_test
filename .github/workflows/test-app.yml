@@ -2,6 +2,7 @@ name: Node.js CI demo deploiement
 
 on:
   workflow_dispatch:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -24,9 +25,7 @@ jobs:
         node-version: 20   
 
     - name: Installer les dépendances
-    - working-directory: ./simpleApp
       run: npm install
 
     - name: Lancer les tests
-    - working-directory: ./simpleApp
       run: npm test
