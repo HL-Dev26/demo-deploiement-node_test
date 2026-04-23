@@ -24,11 +24,11 @@ jobs:
         node-version: 20   
 
     - name: Installer les dépendances
-    - working-directory: ./simpleApp
+      working-directory: ./simpleApp
       run: npm install
 
     - name: Lancer les tests
-    - working-directory: ./simpleApp
+      working-directory: ./simpleApp
       run: npm test
       env:
         MY_APP_VERSION: ${{secrets.APP_VERSION}}
